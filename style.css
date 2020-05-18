@@ -1,5 +1,23 @@
-/*forside*/
+body {
+    background-color: aliceblue;
+}
 
+
+/*forside*/
+nav a {
+    width: 30vw;
+    margin: 1vw;
+}
+
+nav {
+    height: 10vw;
+    text-align: end;
+    padding-right: 2vw;
+}
+
+img {
+    width: 100px;
+}
 
 /*about*/
 
