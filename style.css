@@ -5,7 +5,7 @@ body {
 }
 
 
-/*forside*/
+/******************** FORSIDE ********************/
 nav a {
     width: 30vw;
     margin: 1vw;
@@ -18,23 +18,16 @@ nav {
     width: 99vw;
     left: 1vw;
     z-index: 101;
+    margin-top: 15px;
 }
 
-img {
+nav img {
     width: 60px;
 }
 
 #logo {
     position: absolute;
     left: 1vw;
-
-
-}
-
-@media only screen and (min-width: 600px) {
-    img {
-        width: 100px;
-    }
 }
 
 .forside_video {
@@ -43,10 +36,73 @@ img {
     margin: 0;
 }
 
-/*about*/
+
+/******************** ABOUT ********************/
 
 
-/*contact*/
+/******************** WORK ********************/
+.fotosoulland_3,
+.fotosoulland_2,
+.fotosoulland_1 {
+    width: 213px;
+    height: 340px;
+    margin: 0 auto;
+    align-content: center;
+    margin-bottom: 5vw;
+}
+
+.fotosoulland_1 {
+    padding: 15vw 0 15vw 0;
+}
+
+.soulland_tekst_1 {
+    margin-left: 7vw;
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 5vw;
+}
 
 
-/*work*/
+/******************** CONTACT ********************/
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+
+    /******************** FORSIDE ********************/
+    nav img {
+        width: 100px;
+    }
+
+    /******************** ABOUT ********************/
+
+
+    /******************** WORK ********************/
+    .soulland_foto {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 12vw;
+        padding-left: 8vw;
+    }
+
+    .fotosoulland_3,
+    .fotosoulland_2,
+    .fotosoulland_1 {
+        width: 426px;
+        height: 680px;
+        margin: 0;
+    }
+
+    .fotosoulland_1 {
+        padding: 0;
+    }
+
+
+
+
+    /******************** CONTACT ********************/
+}

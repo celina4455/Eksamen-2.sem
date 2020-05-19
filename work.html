@@ -16,7 +16,48 @@
         <a href="contact.html"><img src="SVG/contact.svg"></a>
 
     </nav>
-    <script src="">
+
+    <div class="soulland_foto"></div>
+    <div class="soulland_tekst_1"></div>
+
+
+
+
+    <script>
+
+        window.addEventListener("load", sidenVises);
+
+        const endpoint0 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
+        const endpoint1 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
+
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData1();
+        }
+
+
+        async function hentData1() {
+            const response = await fetch(endpoint0);
+            console.log(response);
+            const json = await response.json();
+            visWork1(json);
+        }
+
+        //SOULLAND//
+
+        async function visWork1() {
+            const response = await fetch(endpoint1);
+            console.log(response);
+            const json = await response.json();
+            visSoulland(json);
+        }
+
+        function visSoulland(posts) {
+            console.log(posts);
+            document.querySelector(".soulland_foto").innerHTML = posts.content.rendered;
+            document.querySelector(".soulland_tekst_1").textContent = posts.title.rendered;
+        }
 
 
     </script>
