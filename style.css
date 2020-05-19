@@ -9,6 +9,11 @@ body {
 nav a {
     width: 30vw;
     margin: 1vw;
+
+}
+
+#menupunkt:hover {
+    transform: scale(1.2);
 }
 
 nav {
@@ -23,6 +28,7 @@ nav {
 
 nav img {
     width: 60px;
+    transition: all .2s ease-in-out;
 }
 
 #logo {
@@ -67,7 +73,8 @@ nav img {
     font-size: 1.5rem;
     background-color: white;
     padding: 5vw;
-    margin-top: -10vw;}
+    margin-top: -10vw;
+}
 
 
 /******* SOULLAND *******/
