@@ -29,6 +29,11 @@
         <div class="off_tekst_1 all_work_tekst"></div>
     </div>
 
+    <div class="work_3">
+        <div class="eros_foto all_work_foto"></div>
+        <div class="eros_tekst_1 all_work_tekst"></div>
+    </div>
+
 
 
 
@@ -38,8 +43,12 @@
         const page = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
         const soulland_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
         const soulland_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/98";
+
         const off_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/33";
         const off_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/102";
+
+        const eros_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/119";
+        const eros_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/65";
 
 
         function sidenVises() {
@@ -90,7 +99,7 @@
         function visSoullandTekst(posts) {
             console.log(posts);
             document.querySelector(".soulland_tekst_1").innerHTML = posts.content.rendered;
-            visOfffoto();
+            hentOfffoto();
         }
 
 
@@ -98,7 +107,7 @@
 
 
         //*********************** OFF LICENSE - CASH ONLY ***********************//
-        async function visOfffoto() {
+        async function hentOfffoto() {
             const response = await fetch(off_foto);
             console.log(response);
             const json = await response.json();
@@ -108,11 +117,10 @@
         function visOffLicenseFoto(posts) {
             console.log(posts);
             document.querySelector(".off_foto").innerHTML = posts.content.rendered;
-            /*document.querySelector(".soulland_tekst_1").textContent = posts.title.rendered;*/
-            visOffTekst();
+            hentOffTekst();
         }
 
-        async function visOffTekst() {
+        async function hentOffTekst() {
             const response = await fetch(off_tekst);
             console.log(response);
             const json = await response.json();
@@ -122,6 +130,37 @@
         function visOffLicenseTekst(posts) {
             console.log(posts);
             document.querySelector(".off_tekst_1").innerHTML = posts.content.rendered;
+            hentErosFoto();
+        }
+
+
+
+
+
+        //*********************** EROS TORSO ***********************//
+        async function hentErosFoto() {
+            const response = await fetch(eros_foto);
+            console.log(response);
+            const json = await response.json();
+            visErosFoto(json);
+        }
+
+        function visErosFoto(posts) {
+            console.log(posts);
+            document.querySelector(".eros_foto").innerHTML = posts.content.rendered;
+            hentErosTekst();
+        }
+
+        async function hentErosTekst() {
+            const response = await fetch(eros_tekst);
+            console.log(response);
+            const json = await response.json();
+            visErosTorsoTekst(json);
+        }
+
+        function visErosTorsoTekst(posts) {
+            console.log(posts);
+            document.querySelector(".eros_tekst_1").innerHTML = posts.content.rendered;
         }
 
     </script>
