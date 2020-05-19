@@ -1,5 +1,7 @@
 body {
-    background-color: aliceblue;
+    background-color: #f2f7fc;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -12,11 +14,33 @@ nav a {
 nav {
     height: 10vw;
     text-align: end;
-    padding-right: 2vw;
+    position: absolute;
+    width: 99vw;
+    left: 1vw;
+    z-index: 101;
 }
 
 img {
-    width: 100px;
+    width: 60px;
+}
+
+#logo {
+    position: absolute;
+    left: 1vw;
+
+
+}
+
+@media only screen and (min-width: 600px) {
+    img {
+        width: 100px;
+    }
+}
+
+.forside_video {
+    width: 100vw;
+    position: relative;
+    margin: 0;
 }
 
 /*about*/
