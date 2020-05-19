@@ -41,27 +41,51 @@ nav img {
 
 
 /******************** WORK ********************/
-.fotosoulland_3,
-.fotosoulland_2,
-.fotosoulland_1 {
-    width: 213px;
-    height: 340px;
+.work_overskrift {
+    text-align: center;
+    padding-top: 30vw;
+    color: grey;
+    margin: 0;
+}
+
+
+.all_work_foto {
+    max-width: 80vw;
+    height: auto;
+    /*    width: 213px;
+    height: 340px;*/
     margin: 0 auto;
     align-content: center;
-    margin-bottom: 5vw;
+    position: relative;
 }
 
-.fotosoulland_1 {
-    padding: 15vw 0 15vw 0;
-}
 
-.soulland_tekst_1 {
-    margin-left: 7vw;
+.all_work_tekst {
+    position: absolute;
+    width: 70vw;
+    color: grey;
     font-size: 1.5rem;
     background-color: white;
     padding: 5vw;
-}
+    margin-top: -10vw;}
 
+
+/******* SOULLAND *******/
+/*.soulland_tekst_1 {
+    position: absolute;
+    width: 70vw;
+    color: grey;
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 5vw;
+    margin-top: -10vw;
+}*/
+
+
+/******* OFF LICENSE - CASH ONLY *******/
+.off_foto {
+    margin-top: 40vw;
+}
 
 /******************** CONTACT ********************/
 
@@ -82,10 +106,27 @@ nav img {
 
 
     /******************** WORK ********************/
+    .work_overskrift {
+        padding-top: 12vw;
+        font-size: 3rem;
+    }
+
+    .all_work_foto {
+        max-width: 100%;
+    }
+
+    .all_work_tekst {
+        width: 30vw;
+        left: 5vw;
+        padding: 3vw;
+        margin-top: -2vw;
+    }
+
+    /***** SOULLAND *****/
     .soulland_foto {
         display: flex;
         flex-wrap: wrap;
-        padding-top: 12vw;
+        padding-top: 3vw;
         padding-left: 8vw;
     }
 
@@ -94,11 +135,23 @@ nav img {
     .fotosoulland_1 {
         width: 426px;
         height: 680px;
-        margin: 0;
+        margin: 0 2px;
     }
 
-    .fotosoulland_1 {
-        padding: 0;
+
+    /***** OFF LICENSE - CASH ONLY *****/
+    .off_foto {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20vw;
+        padding-top: 1vw;
+        padding-left: 8vw;
+    }
+
+    .fotooff_1,
+    .fotooff_2,
+    .fotooff_1 {
+        margin: 0 2px;
     }
 
 
