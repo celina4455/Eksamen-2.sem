@@ -16,6 +16,31 @@
 
     </nav>
 
+    <div class="forside_video"></div>
 
-    <script src=""></script>
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const endpoint = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/7";
+
+
+        function sidenVises() {
+            console.log("Siden vises");
+            hentData();
+        }
+
+        async function hentData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            const json = await response.json();
+            visPage(json);
+        }
+
+        function visPage(page) {
+
+            console.log(page);
+            document.querySelector(".forside_video").innerHTML = page.content.rendered;
+
+        }
+    </script>
 </body></html>
