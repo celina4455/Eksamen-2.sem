@@ -10,7 +10,7 @@
 
 <body>
     <nav>
-        <a href="forside.html"><img id="logo" src="SVG/SVG/logo.svg"></a>
+        <a href="forside.html"><img id="logo" src="png/klipudlogo.png"></a>
         <a href="work.html"><img id="menupunkt" src="SVG/work.svg"></a>
         <a href="about.html"><img id="menupunkt" src="SVG/about.svg"></a>
         <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
@@ -29,6 +29,31 @@
         <div class="off_tekst_1 all_work_tekst"></div>
     </div>
 
+    <div class="work_3">
+        <div class="eros_foto all_work_foto"></div>
+        <div class="eros_tekst_1 all_work_tekst"></div>
+    </div>
+
+    <div class="work_4">
+        <div class="soft_foto all_work_foto"></div>
+        <div class="soft_tekst_1 all_work_tekst"></div>
+    </div>
+
+    <div class="work_5">
+        <div class="fort_foto all_work_foto"></div>
+        <div class="fort_tekst_1 all_work_tekst"></div>
+    </div>
+
+    <div class="work_6">
+        <div class="kiki_foto all_work_foto"></div>
+        <div class="kiki_tekst_1 all_work_tekst"></div>
+    </div>
+
+    <div class="work_7">
+        <div class="mater_foto all_work_foto"></div>
+        <div class="mater_tekst_1 all_work_tekst"></div>
+    </div>
+
 
 
 
@@ -38,8 +63,24 @@
         const page = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
         const soulland_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
         const soulland_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/98";
+
         const off_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/33";
         const off_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/102";
+
+        const eros_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/119";
+        const eros_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/65";
+
+        const soft_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/131";
+        const soft_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/148";
+
+        const fort_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/152";
+        const fort_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/79";
+
+        const kiki_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/164";
+        const kiki_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/81";
+
+        const mater_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/166";
+        const mater_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/168";
 
 
         function sidenVises() {
@@ -90,7 +131,7 @@
         function visSoullandTekst(posts) {
             console.log(posts);
             document.querySelector(".soulland_tekst_1").innerHTML = posts.content.rendered;
-            visOfffoto();
+            hentOfffoto();
         }
 
 
@@ -98,7 +139,7 @@
 
 
         //*********************** OFF LICENSE - CASH ONLY ***********************//
-        async function visOfffoto() {
+        async function hentOfffoto() {
             const response = await fetch(off_foto);
             console.log(response);
             const json = await response.json();
@@ -108,11 +149,10 @@
         function visOffLicenseFoto(posts) {
             console.log(posts);
             document.querySelector(".off_foto").innerHTML = posts.content.rendered;
-            /*document.querySelector(".soulland_tekst_1").textContent = posts.title.rendered;*/
-            visOffTekst();
+            hentOffTekst();
         }
 
-        async function visOffTekst() {
+        async function hentOffTekst() {
             const response = await fetch(off_tekst);
             console.log(response);
             const json = await response.json();
@@ -122,6 +162,164 @@
         function visOffLicenseTekst(posts) {
             console.log(posts);
             document.querySelector(".off_tekst_1").innerHTML = posts.content.rendered;
+            hentErosFoto();
         }
+
+
+
+
+
+        //*********************** EROS TORSO ***********************//
+        async function hentErosFoto() {
+            const response = await fetch(eros_foto);
+            console.log(response);
+            const json = await response.json();
+            visErosFoto(json);
+        }
+
+        function visErosFoto(posts) {
+            console.log(posts);
+            document.querySelector(".eros_foto").innerHTML = posts.content.rendered;
+            hentErosTekst();
+        }
+
+        async function hentErosTekst() {
+            const response = await fetch(eros_tekst);
+            console.log(response);
+            const json = await response.json();
+            visErosTorsoTekst(json);
+        }
+
+        function visErosTorsoTekst(posts) {
+            console.log(posts);
+            document.querySelector(".eros_tekst_1").innerHTML = posts.content.rendered;
+            hentSoftFoto();
+        }
+
+
+
+
+
+        //*********************** SOFT BOXING ***********************//
+        async function hentSoftFoto() {
+            const response = await fetch(soft_foto);
+            console.log(response);
+            const json = await response.json();
+            visSoftFoto(json);
+        }
+
+        function visSoftFoto(posts) {
+            console.log(posts);
+            document.querySelector(".soft_foto").innerHTML = posts.content.rendered;
+            hentSoftTekst();
+        }
+
+        async function hentSoftTekst() {
+            const response = await fetch(soft_tekst);
+            console.log(response);
+            const json = await response.json();
+            visSoftBoxingTekst(json);
+        }
+
+        function visSoftBoxingTekst(posts) {
+            console.log(posts);
+            document.querySelector(".soft_tekst_1").innerHTML = posts.content.rendered;
+            hentFortFoto();
+        }
+
+
+
+
+
+        //*********************** BLANKET FORT ***********************//
+        async function hentFortFoto() {
+            const response = await fetch(fort_foto);
+            console.log(response);
+            const json = await response.json();
+            visFortFoto(json);
+        }
+
+        function visFortFoto(posts) {
+            console.log(posts);
+            document.querySelector(".fort_foto").innerHTML = posts.content.rendered;
+            hentFortTekst();
+        }
+
+        async function hentFortTekst() {
+            const response = await fetch(fort_tekst);
+            console.log(response);
+            const json = await response.json();
+            visBlanketFortTekst(json);
+        }
+
+        function visBlanketFortTekst(posts) {
+            console.log(posts);
+            document.querySelector(".fort_tekst_1").innerHTML = posts.content.rendered;
+            hentKikiFoto();
+        }
+
+
+
+
+
+        //*********************** KIKI BEACH ClUB ***********************//
+        async function hentKikiFoto() {
+            const response = await fetch(kiki_foto);
+            console.log(response);
+            const json = await response.json();
+            visKikiFoto(json);
+        }
+
+        function visKikiFoto(posts) {
+            console.log(posts);
+            document.querySelector(".kiki_foto").innerHTML = posts.content.rendered;
+            hentKikiTekst();
+        }
+
+        async function hentKikiTekst() {
+            const response = await fetch(kiki_tekst);
+            console.log(response);
+            const json = await response.json();
+            visKikiBeachTekst(json);
+        }
+
+        function visKikiBeachTekst(posts) {
+            console.log(posts);
+            document.querySelector(".kiki_tekst_1").innerHTML = posts.content.rendered;
+            hentMaterFoto();
+        }
+
+
+
+
+
+        //*********************** MATER ***********************//
+        async function hentMaterFoto() {
+            const response = await fetch(mater_foto);
+            console.log(response);
+            const json = await response.json();
+            visMaterFoto(json);
+        }
+
+        function visMaterFoto(posts) {
+            console.log(posts);
+            document.querySelector(".mater_foto").innerHTML = posts.content.rendered;
+            hentMaterTekst();
+        }
+
+        async function hentMaterTekst() {
+            const response = await fetch(mater_tekst);
+            console.log(response);
+            const json = await response.json();
+            visMaterTekst(json);
+        }
+
+        function visMaterTekst(posts) {
+            console.log(posts);
+            document.querySelector(".mater_tekst_1").innerHTML = posts.content.rendered;
+        }
+
     </script>
-</body></html>
+</body>
+
+</html>

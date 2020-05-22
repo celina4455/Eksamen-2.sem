@@ -59,8 +59,6 @@ nav img {
 .all_work_foto {
     max-width: 80vw;
     height: auto;
-    /*    width: 213px;
-    height: 340px;*/
     margin: 0 auto;
     align-content: center;
     position: relative;
@@ -79,20 +77,42 @@ nav img {
 
 
 /******* SOULLAND *******/
-/*.soulland_tekst_1 {
-    position: absolute;
-    width: 70vw;
-    color: grey;
-    font-size: 1.5rem;
-    background-color: white;
-    padding: 5vw;
-    margin-top: -10vw;
-}*/
-
+.soulland_foto {
+    margin-top: 10vw;
+}
 
 /******* OFF LICENSE - CASH ONLY *******/
 .off_foto {
     margin-top: 40vw;
+}
+
+/****** EROS TORSO *****/
+.eros_foto {
+    margin-top: 80vw;
+}
+
+/****** SOFT BOXING *****/
+.soft_foto {
+    margin-top: 80vw;
+}
+
+/****** FORT *****/
+.fort_foto {
+    margin-top: 80vw;
+}
+
+.fort_2 {
+    margin-left: 4vw;
+}
+
+/****** KIKI *****/
+.kiki_foto {
+    margin-top: 80vw;
+}
+
+/****** MATER *****/
+.mater_foto {
+    margin-top: 80vw;
 }
 
 /******************** CONTACT ********************/
@@ -136,6 +156,7 @@ nav img {
         flex-wrap: wrap;
         padding-top: 3vw;
         padding-left: 8vw;
+        margin-top: 0;
     }
 
     .fotosoulland_3,
@@ -159,6 +180,86 @@ nav img {
     .fotooff_1,
     .fotooff_2,
     .fotooff_3 {
+        margin: 0 2px;
+    }
+
+
+    /***** EROS TORSO *****/
+    .eros_foto {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20vw;
+        padding-top: 1vw;
+        padding-left: 8vw;
+    }
+
+    .fotoeros_1,
+    .fotoeros_2,
+    .fotoeros_3 {
+        margin: 0 2px;
+    }
+
+
+    /***** SOFT BOXING *****/
+    .soft_foto {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20vw;
+        padding-top: 1vw;
+        padding-left: 8vw;
+    }
+
+    .soft1,
+    .soft2,
+    .soft3 {
+        margin: 0 2px;
+    }
+
+
+    /***** FORT *****/
+    .fort_foto {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20vw;
+        padding-top: 1vw;
+        padding-left: 8vw;
+    }
+
+    .fort_1,
+    .fort_2,
+    .fort_3 {
+        margin: 0 2px;
+    }
+
+
+    /***** KIKI BEACH CLUB *****/
+    .kiki_foto {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20vw;
+        padding-top: 1vw;
+        padding-left: 8vw;
+    }
+
+    .kiki_1,
+    .kiki_2,
+    .kiki_3 {
+        margin: 0 2px;
+    }
+
+
+    /***** MATER *****/
+    .mater_foto {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20vw;
+        padding-top: 1vw;
+        padding-left: 8vw;
+    }
+
+    .mater1,
+    .mater2,
+    .mater3 {
         margin: 0 2px;
     }
 
