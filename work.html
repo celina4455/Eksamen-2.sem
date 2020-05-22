@@ -10,25 +10,45 @@
 
 <body>
     <nav>
-        <img id="logo" src="SVG/SVG/logo.svg">
-        <a href="work.html"><img src="SVG/work.svg"></a>
-        <a href="about.html"><img src="SVG/about.svg"></a>
-        <a href="contact.html"><img src="SVG/contact.svg"></a>
+        <a href="forside.html"><img id="logo" src="SVG/SVG/logo.svg"></a>
+        <a href="work.html"><img id="menupunkt" src="SVG/work.svg"></a>
+        <a href="about.html"><img id="menupunkt" src="SVG/about.svg"></a>
+        <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
 
     </nav>
 
-    <div class="soulland_foto"></div>
-    <div class="soulland_tekst_1"></div>
+    <h1 class="work_overskrift"></h1>
+
+    <div class="work_1">
+        <div class="soulland_foto all_work_foto"></div>
+        <div class="soulland_tekst_1 all_work_tekst"></div>
+    </div>
+
+    <div class="work_2">
+        <div class="off_foto all_work_foto"></div>
+        <div class="off_tekst_1 all_work_tekst"></div>
+    </div>
+
+    <div class="work_3">
+        <div class="eros_foto all_work_foto"></div>
+        <div class="eros_tekst_1 all_work_tekst"></div>
+    </div>
 
 
 
 
     <script>
-
         window.addEventListener("load", sidenVises);
 
-        const endpoint0 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
-        const endpoint1 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
+        const page = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
+        const soulland_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
+        const soulland_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/98";
+
+        const off_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/33";
+        const off_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/102";
+
+        const eros_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/119";
+        const eros_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/65";
 
 
         function sidenVises() {
@@ -38,29 +58,109 @@
 
 
         async function hentData1() {
-            const response = await fetch(endpoint0);
+            const response = await fetch(page);
             console.log(response);
             const json = await response.json();
-            visWork1(json);
+            visTitle(json);
         }
 
-        //SOULLAND//
+        function visTitle(page) {
+            console.log(page);
+            document.querySelector(".work_overskrift").innerHTML = page.title.rendered;
+            visSoulfoto();
+        }
 
-        async function visWork1() {
-            const response = await fetch(endpoint1);
+
+
+
+
+        //*********************** SOULLAND ***********************//
+        async function visSoulfoto() {
+            const response = await fetch(soulland_foto);
             console.log(response);
             const json = await response.json();
-            visSoulland(json);
+            visSoullandFoto(json);
         }
 
-        function visSoulland(posts) {
+        function visSoullandFoto(posts) {
             console.log(posts);
             document.querySelector(".soulland_foto").innerHTML = posts.content.rendered;
-            document.querySelector(".soulland_tekst_1").textContent = posts.title.rendered;
+            /*document.querySelector(".soulland_tekst_1").textContent = posts.title.rendered;*/
+            visSoulTekst();
+        }
+
+        async function visSoulTekst() {
+            const response = await fetch(soulland_tekst);
+            console.log(response);
+            const json = await response.json();
+            visSoullandTekst(json);
+        }
+
+        function visSoullandTekst(posts) {
+            console.log(posts);
+            document.querySelector(".soulland_tekst_1").innerHTML = posts.content.rendered;
+            hentOfffoto();
         }
 
 
-    </script>
-</body>
 
-</html>
+
+
+        //*********************** OFF LICENSE - CASH ONLY ***********************//
+        async function hentOfffoto() {
+            const response = await fetch(off_foto);
+            console.log(response);
+            const json = await response.json();
+            visOffLicenseFoto(json);
+        }
+
+        function visOffLicenseFoto(posts) {
+            console.log(posts);
+            document.querySelector(".off_foto").innerHTML = posts.content.rendered;
+            hentOffTekst();
+        }
+
+        async function hentOffTekst() {
+            const response = await fetch(off_tekst);
+            console.log(response);
+            const json = await response.json();
+            visOffLicenseTekst(json);
+        }
+
+        function visOffLicenseTekst(posts) {
+            console.log(posts);
+            document.querySelector(".off_tekst_1").innerHTML = posts.content.rendered;
+            hentErosFoto();
+        }
+
+
+
+
+
+        //*********************** EROS TORSO ***********************//
+        async function hentErosFoto() {
+            const response = await fetch(eros_foto);
+            console.log(response);
+            const json = await response.json();
+            visErosFoto(json);
+        }
+
+        function visErosFoto(posts) {
+            console.log(posts);
+            document.querySelector(".eros_foto").innerHTML = posts.content.rendered;
+            hentErosTekst();
+        }
+
+        async function hentErosTekst() {
+            const response = await fetch(eros_tekst);
+            console.log(response);
+            const json = await response.json();
+            visErosTorsoTekst(json);
+        }
+
+        function visErosTorsoTekst(posts) {
+            console.log(posts);
+            document.querySelector(".eros_tekst_1").innerHTML = posts.content.rendered;
+        }
+    </script>
+</body></html>
