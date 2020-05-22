@@ -17,7 +17,35 @@
 
     </nav>
 
-    <script src=""></script>
+
+    <h1 class="about_overskrift"></h1>
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const page_about = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/12";
+
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData1();
+        }
+
+
+        async function hentData1() {
+            const response = await fetch(page_about);
+            console.log(response);
+            const json = await response.json();
+            visTitle(json);
+        }
+
+        function visTitle(page) {
+            console.log(page);
+            document.querySelector(".about_overskrift").innerHTML = page.title.rendered;
+        }
+
+
+    </script>
 </body>
 
 </html>

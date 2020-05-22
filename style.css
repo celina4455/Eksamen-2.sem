@@ -42,18 +42,18 @@ nav img {
     margin: 0;
 }
 
-
-/******************** ABOUT ********************/
-
-
-/******************** WORK ********************/
-.work_overskrift {
+h1{
     text-align: center;
     padding-top: 30vw;
     color: grey;
     margin: 0;
 }
 
+
+/******************** ABOUT ********************/
+
+
+/******************** WORK ********************/
 
 .all_work_foto {
     max-width: 80vw;
@@ -124,6 +124,11 @@ nav img {
 
 @media only screen and (min-width: 600px) {
 
+    h1 {
+        padding-top: 12vw;
+        font-size: 3rem;
+    }
+
     /******************** FORSIDE ********************/
     nav img {
         width: 100px;
@@ -133,10 +138,6 @@ nav img {
 
 
     /******************** WORK ********************/
-    .work_overskrift {
-        padding-top: 12vw;
-        font-size: 3rem;
-    }
 
     .all_work_foto {
         max-width: 100%;

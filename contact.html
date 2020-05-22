@@ -16,7 +16,36 @@
         <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
 
     </nav>
-    <script src=""></script>
+
+    <h1 class="contact_overskrift"></h1>
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const page_contact = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/14";
+
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentData1();
+        }
+
+
+        async function hentData1() {
+            const response = await fetch(page_contact);
+            console.log(response);
+            const json = await response.json();
+            visTitle(json);
+        }
+
+        function visTitle(page) {
+            console.log(page);
+            document.querySelector(".contact_overskrift").innerHTML = page.title.rendered;
+        }
+
+
+
+    </script>
 </body>
 
 </html>

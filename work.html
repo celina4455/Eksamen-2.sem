@@ -60,7 +60,8 @@
     <script>
         window.addEventListener("load", sidenVises);
 
-        const page = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
+        const page_work = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
+
         const soulland_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
         const soulland_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/98";
 
@@ -90,7 +91,7 @@
 
 
         async function hentData1() {
-            const response = await fetch(page);
+            const response = await fetch(page_work);
             console.log(response);
             const json = await response.json();
             visTitle(json);
