@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft boxing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="forside.html"><img id="logo" src="png/klipudlogo.png"></a>
+        <a href="work.html"><img id="menupunkt" src="SVG/work.svg"></a>
+        <a href="about.html"><img id="menupunkt" src="SVG/about.svg"></a>
+        <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
+    </nav>
+
+    <h1 class="soft_boxing_overskrift"></h1>
+
+    <div class="about_soft"></div>
+
+
+    <script>
+        window.addEventListener("load", sidenVises);
+
+        const page_singlesoft = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/198";
+
+        const aboutsoft = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/196";
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            hentOverskrift();
+        }
+
+
+        async function hentOverskrift() {
+            const response = await fetch(page_singlesoft);
+            console.log(response);
+            const json = await response.json();
+            visTitle(json);
+        }
+
+        function visTitle(page) {
+            console.log(page);
+            document.querySelector(".soft_boxing_overskrift").innerHTML = page.title.rendered;
+            hentAboutSoft();
+        }
+
+        /**************** BESKRIVELSE AF SOFT BOXING ****************/
+        async function hentAboutSoft() {
+            const response = await fetch(aboutsoft);
+            console.log(response);
+            const json = await response.json();
+            visAboutSoft(json);
+        }
+
+        function visAboutSoft(posts) {
+            console.log(posts);
+            document.querySelector(".about_soft").innerHTML = posts.content.rendered;
+        }
+
+    </script>
+</body>
+</html>

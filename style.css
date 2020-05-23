@@ -5,7 +5,6 @@ body {
 }
 
 
-/******************** FORSIDE ********************/
 nav a {
     width: 30vw;
     margin: 1vw;
@@ -36,18 +35,28 @@ nav img {
     left: 1vw;
 }
 
-.forside_video {
-    width: 100vw;
-    position: relative;
-    margin: 0;
-}
-
 h1{
     text-align: center;
     padding-top: 30vw;
     color: grey;
     margin: 0;
 }
+
+footer {
+    background-color: white;
+    margin-top: 350px;
+    text-align: end;
+    padding: 15px;
+}
+
+
+/******************** FORSIDE ********************/
+.forside_video {
+    width: 100vw;
+    position: relative;
+    margin: 0;
+}
+
 
 
 /******************** ABOUT ********************/
@@ -82,7 +91,7 @@ h1{
 
 /******* OFF LICENSE - CASH ONLY *******/
 .off_foto {
-    margin-top: 40vw;
+    margin-top: 80vw;
 }
 
 /****** EROS TORSO *****/
@@ -101,7 +110,7 @@ h1{
 }
 
 .fort_2 {
-    margin-left: 4vw;
+    margin-left: 6vw;
 }
 
 /****** KIKI *****/
@@ -123,22 +132,24 @@ h1{
 
 
 @media only screen and (min-width: 600px) {
-
     h1 {
         padding-top: 12vw;
         font-size: 3rem;
     }
 
-    /******************** FORSIDE ********************/
     nav img {
         width: 100px;
     }
 
+    footer {
+    margin-top: 550px;
+    }
+
+    /******************** FORSIDE ********************/
+
     /******************** ABOUT ********************/
 
-
     /******************** WORK ********************/
-
     .all_work_foto {
         max-width: 100%;
     }

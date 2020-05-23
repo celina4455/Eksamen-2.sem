@@ -19,19 +19,27 @@
 
     <h1 class="contact_overskrift"></h1>
 
+    <div class="contact_tekst"></div>
+    <div class="contact_foto"></div>
+
+    <footer></footer>
+
     <script>
         window.addEventListener("load", sidenVises);
 
         const page_contact = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/14";
+        const kontakt = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/189";
+
+        const footer = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/193";
 
 
         function sidenVises() {
             console.log("Siden Vises");
-            hentData1();
+            hentPage();
         }
 
 
-        async function hentData1() {
+        async function hentPage() {
             const response = await fetch(page_contact);
             console.log(response);
             const json = await response.json();
@@ -41,6 +49,49 @@
         function visTitle(page) {
             console.log(page);
             document.querySelector(".contact_overskrift").innerHTML = page.title.rendered;
+            hentKontaktInfo();
+        }
+
+
+        /********** KONTAKT TEKST **********/
+        async function hentKontaktInfo() {
+            const response = await fetch(kontakt);
+            console.log(response);
+            const json = await response.json();
+            visInfo(json);
+        }
+
+        function visInfo(page) {
+            console.log(page);
+            document.querySelector(".contact_tekst").innerHTML = page.content.rendered;
+            hentFooter();
+        }
+
+
+        /********** KONTAKT FOTO **********/
+
+
+
+
+
+
+
+
+
+
+
+
+        //*********************** FOOTER ***********************//
+        async function hentFooter() {
+            const response = await fetch(footer);
+            console.log(response);
+            const json = await response.json();
+            visFooter(json);
+        }
+
+        function visFooter(posts) {
+            console.log(posts);
+            document.querySelector("footer").innerHTML = posts.content.rendered;
         }
 
 
