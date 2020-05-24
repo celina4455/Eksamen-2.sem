@@ -4,6 +4,14 @@ body {
     padding: 0;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.caro_imgs {
+    width: 100%;
+}
 
 nav a {
     width: 30vw;
@@ -35,7 +43,7 @@ nav img {
     left: 1vw;
 }
 
-h1{
+h1 {
     text-align: center;
     padding-top: 30vw;
     color: grey;
@@ -123,7 +131,91 @@ footer {
     margin-top: 80vw;
 }
 
+
+
+/******************** SINGLE VIEW WORK ********************/
+.about_soft {
+    margin: 0 8vw;
+}
+
+
+/** Carousel **/
+main {
+    margin-top: 15vw;
+    width: 100vw;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.the_container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.the_container section {
+    scroll-snap-align: start;
+    min-width: 100%;
+}
+
+.carousel_inner {
+    display: flex;
+}
+
+.legend_pic_container section {
+    display: inline-block;
+    height: 7vh;
+}
+
+.legend_pic_container img {
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+}
+
+.legend_border {
+    outline: 0.25px solid black;
+    outline-offset: -1px;
+}
+
+.bwd,
+.fwd {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    height: 10vw;
+    width: auto;
+    padding: 50% 0;
+}
+
+.fwd {
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /******************** CONTACT ********************/
+
+
+
+
 
 
 
@@ -142,7 +234,7 @@ footer {
     }
 
     footer {
-    margin-top: 550px;
+        margin-top: 550px;
     }
 
     /******************** FORSIDE ********************/
@@ -282,6 +374,55 @@ footer {
     .mater3 {
         margin: 0 2px;
     }
+
+
+
+
+    /******************** SINGLE VIEW WORK ********************/
+    #singleview_soft {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        padding-top: 5vw;
+        margin: 0 auto;
+        align-content: center;
+    }
+
+    .about_soft,
+    main {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_soft {
+        margin: 22vw 2vw 0 0;
+    }
+
+    main {
+        margin-top: 0vw;
+    }
+
+    .bwd,
+    .fwd {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        position: absolute;
+        height: 2vw;
+        width: auto;
+        padding: 20% 0;
+    }
+
+    .fwd {
+        right: 9.5vw;
+    }
+
+    .carousel {
+        width: 90%;
+    }
+
+
 
 
 
