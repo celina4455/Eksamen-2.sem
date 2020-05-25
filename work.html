@@ -19,40 +19,43 @@
 
     <h1 class="work_overskrift"></h1>
 
-    <div class="work_1">
+    <div class="work">
         <div class="soulland_foto all_work_foto"></div>
         <div class="soulland_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work_2">
+    <a href="singlesoft.html">
+       <div class="work">
+        <div class="soft_foto all_work_foto"></div>
+        <div class="soft_tekst_1 all_work_tekst"></div>
+    </div></a>
+
+    <div class="work">
         <div class="off_foto all_work_foto"></div>
         <div class="off_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work_3">
+    <div class="work">
         <div class="eros_foto all_work_foto"></div>
         <div class="eros_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work_4">
-        <div class="soft_foto all_work_foto"></div>
-        <div class="soft_tekst_1 all_work_tekst"></div>
-    </div>
-
-    <div class="work_5">
+    <div class="work">
         <div class="fort_foto all_work_foto"></div>
         <div class="fort_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work_6">
+    <div class="work">
         <div class="kiki_foto all_work_foto"></div>
         <div class="kiki_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work_7">
+    <div class="work">
         <div class="mater_foto all_work_foto"></div>
         <div class="mater_tekst_1 all_work_tekst"></div>
     </div>
+
+    <footer></footer>
 
 
 
@@ -60,7 +63,8 @@
     <script>
         window.addEventListener("load", sidenVises);
 
-        const page = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
+        const page_work = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/10";
+
         const soulland_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/28";
         const soulland_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/98";
 
@@ -82,6 +86,8 @@
         const mater_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/166";
         const mater_foto = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/168";
 
+        const footer = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/193";
+
 
         function sidenVises() {
             console.log("Siden Vises");
@@ -90,7 +96,7 @@
 
 
         async function hentData1() {
-            const response = await fetch(page);
+            const response = await fetch(page_work);
             console.log(response);
             const json = await response.json();
             visTitle(json);
@@ -117,7 +123,6 @@
         function visSoullandFoto(posts) {
             console.log(posts);
             document.querySelector(".soulland_foto").innerHTML = posts.content.rendered;
-            /*document.querySelector(".soulland_tekst_1").textContent = posts.title.rendered;*/
             visSoulTekst();
         }
 
@@ -317,6 +322,24 @@
         function visMaterTekst(posts) {
             console.log(posts);
             document.querySelector(".mater_tekst_1").innerHTML = posts.content.rendered;
+            hentFooter();
+        }
+
+
+
+
+
+        //*********************** FOOTER ***********************//
+        async function hentFooter() {
+            const response = await fetch(footer);
+            console.log(response);
+            const json = await response.json();
+            visFooter(json);
+        }
+
+        function visFooter(posts) {
+            console.log(posts);
+            document.querySelector("footer").innerHTML = posts.content.rendered;
         }
 
     </script>

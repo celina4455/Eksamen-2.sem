@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft boxing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="forside.html"><img id="logo" src="png/klipudlogo.png"></a>
+        <a href="work.html"><img id="menupunkt" src="SVG/work.svg"></a>
+        <a href="about.html"><img id="menupunkt" src="SVG/about.svg"></a>
+        <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
+    </nav>
+
+    <h1 class="soft_boxing_overskrift"></h1>
+
+    <section id="singleview_soft">
+        <p class="about_soft"></p>
+
+
+        <template>
+            <section>
+                <img class="caro_imgs" src="" alt="">
+            </section>
+        </template>
+
+        <main>
+            <div class="carousel">
+                <div class="carousel_inner">
+                    <img class="bwd" src="SVG/arrowleft.png" alt="arrowleft">
+                    <div class="the_container"></div>
+                    <img class="fwd" src="SVG/arrowright.png" alt="arrowleft">
+                </div>
+                <div class="legend_pic_container"></div>
+            </div>
+        </main>
+
+    </section>
+
+    <footer class="singlesoft_footer"></footer>
+
+
+    <script>
+        "use strict"
+        window.addEventListener("load", sidenVises);
+
+        const page_singlesoft = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/198";
+
+        const aboutsoft = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/196";
+
+        const carousel = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/work/205";
+
+        const footer = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/193";
+
+        let theJSON;
+        let numberOfPicsInCarousel;
+        let caroCurrentNum = 0;
+
+        function sidenVises() {
+            console.log("Siden Vises");
+            document.querySelector(".fwd").addEventListener("click", fwd);
+            document.querySelector(".bwd").addEventListener("click", bwd);
+            hentOverskrift();
+            hentCarousel();
+            hentFooter();
+        }
+
+
+        async function hentOverskrift() {
+            const response = await fetch(page_singlesoft);
+            console.log(response);
+            const json = await response.json();
+            visTitle(json);
+        }
+
+        function visTitle(page) {
+            console.log(page);
+            document.querySelector(".soft_boxing_overskrift").innerHTML = page.title.rendered;
+            hentAboutSoft();
+        }
+
+        /**************** BESKRIVELSE AF SOFT BOXING ****************/
+        async function hentAboutSoft() {
+            const response = await fetch(aboutsoft);
+            console.log(response);
+            const json = await response.json();
+            visAboutSoft(json);
+        }
+
+        function visAboutSoft(posts) {
+            console.log(posts);
+            document.querySelector(".about_soft").innerHTML = posts.content.rendered;
+        }
+
+
+
+        /**************** BILLEDE KAROUSEL *************/
+        //async og await betyder, at man ikke går videre før dette funktion, hvor json hentes, er færdig
+        async function hentCarousel() {
+            const response = await fetch(carousel);
+            theJSON = await response.json();
+            console.log(theJSON);
+            buildCarousel();
+        }
+
+        function buildCarousel() {
+            //console.log(theJSON.husbilleder);
+            numberOfPicsInCarousel = theJSON.work.length;
+            theJSON.work.forEach((billede, index) => {
+                const theClone = document.querySelector("template").cloneNode(true).content;
+                const secondClone = document.querySelector("template").cloneNode(true).content;
+
+                theClone.querySelector("img").src = billede.guid;
+                secondClone.querySelector("img").src = billede.guid;
+                secondClone.querySelector("section").dataset.myIndex = index;
+
+                document.querySelector(".the_container").appendChild(theClone);
+                document.querySelector(".legend_pic_container").appendChild(secondClone);
+            })
+
+            document.querySelector(".legend_pic_container section").classList.add("legend_border");
+            document.querySelector(".the_container").addEventListener("scroll", scrollFunction);
+
+            //Herunder kalder vi så på en ny function, der hedder legendClick, som den ryger hen til når der klikkes - altså, hvis man klikker på et af de små billeder, så kommer man automatisk over på det, så man ikke bare skal klikke frem og tilbage for at komme over på et bestemt billede i rækken//
+            document.querySelectorAll(".legend_pic_container section").forEach(each => {
+                each.addEventListener("click", legendClick);
+            })
+
+        }
+
+        function scrollFunction() {
+            document.querySelectorAll(".legend_pic_container section").forEach(each => {
+                each.classList.remove("legend_border");
+            })
+            //console.log("Jeg scroller");
+            caroCurrentNum = Math.round(document.querySelector(".the_container").scrollLeft / document.querySelector(".caro_imgs").width);
+            console.log(caroCurrentNum);
+            document.querySelector(`.legend_pic_container section:nth-child(${caroCurrentNum+1})`).classList.add("legend_border");
+
+            //Slutter lgie af med at kalde på funktionen setBtns, fordi det er den funktion som gør, at opacity og cursoren skifter udseende, når man er nået til enden af billede serien, når man scroller//
+            setBtns();
+        }
+
+        function legendClick(evt) {
+            console.log("LEGEND CLICK", evt.currentTarget);
+            caroCurrentNum = evt.currentTarget.dataset.myIndex;
+            navigate();
+        }
+
+
+        //Hvis caroCurrentNum er mindre end antallet af billeder i karousellen-1 så skal den tælle op og skifte billede//
+        function fwd() {
+            if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+                caroCurrentNum++;
+                navigate();
+            }
+        }
+
+        // Her skal det caroCurrentNum altså være større end nul for så at skifte billede//
+        function bwd() {
+            if (caroCurrentNum > 0) {
+                caroCurrentNum--;
+                navigate();
+            }
+        }
+
+        function navigate() {
+            document.querySelector(".the_container").scrollTo({
+                left: caroCurrentNum * document.querySelector(".caro_imgs").width,
+                behavior: "smooth"
+            })
+            setBtns();
+        }
+
+
+        //Denne funktion gør, at når man når til enden af billede-rækken, så skifter cursoren og den får en gennemsigtighed, så det er tydeligt for brugeren, at man ikke kan klikke mere den vej//
+        function setBtns() {
+            if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+                document.querySelector(".fwd").style.opacity = 1;
+                document.querySelector(".fwd").style.cursor = "pointer";
+            } else {
+                document.querySelector(".fwd").style.opacity = 0.2;
+                document.querySelector(".fwd").style.cursor = "default";
+            }
+
+
+            if (caroCurrentNum > 0) {
+                document.querySelector(".bwd").style.opacity = 1;
+                document.querySelector(".bwd").style.cursor = "pointer";
+            } else {
+                document.querySelector(".bwd").style.opacity = 0.2;
+                document.querySelector(".bwd").style.cursor = "default";
+            }
+        }
+
+
+
+
+
+        //*********************** FOOTER ***********************//
+        async function hentFooter() {
+            const response = await fetch(footer);
+            console.log(response);
+            const json = await response.json();
+            visFooter(json);
+        }
+
+        function visFooter(posts) {
+            console.log(posts);
+            document.querySelector("footer").innerHTML = posts.content.rendered;
+        }
+    </script>
+</body></html>
