@@ -18,12 +18,15 @@
         <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
 
     </nav>
-    <div class="forside_video"></div>
+    <div class="forside_video_desktop"></div>
+    <div class="forside_video_mobil"></div>
 
     <script>
         window.addEventListener("load", sidenVises);
 
         const endpoint = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/7";
+        const videodesktop = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/293";
+        const videomobil = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/299";
 
 
         function sidenVises() {
@@ -35,15 +38,37 @@
             const response = await fetch(endpoint);
             console.log(response);
             const json = await response.json();
-            visPage(json);
+            hentDesktop();
+            hentMobil();
         }
 
-        function visPage(page) {
 
-            console.log(page);
-            document.querySelector(".forside_video").innerHTML = page.content.rendered;
-
+        //*********************** DESKTOP VIDEO ***********************//
+        async function hentDesktop() {
+            const response = await fetch(videodesktop);
+            console.log(response);
+            const json = await response.json();
+            visDesktop(json);
         }
+
+        function visDesktop(posts) {
+            console.log(posts);
+            document.querySelector(".forside_video_desktop").innerHTML = posts.content.rendered;
+        }
+
+        //*********************** MOBIL VIDEO ***********************//
+        async function hentMobil() {
+            const response = await fetch(videomobil);
+            console.log(response);
+            const json = await response.json();
+            visMobil(json);
+        }
+
+        function visMobil(posts) {
+            console.log(posts);
+            document.querySelector(".forside_video_mobil").innerHTML = posts.content.rendered;
+        }
+
 
     </script>
 </body>

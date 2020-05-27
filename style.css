@@ -13,6 +13,10 @@ body {
     width: 100%;
 }
 
+video {
+    width: 100%;
+}
+
 nav a {
     width: 30vw;
     margin: 1vw;
@@ -22,16 +26,22 @@ nav a {
 h1 {
     font-family: 'Bebas Neue', cursive;
     font-size: 3rem;
+    text-align: center;
+    padding-top: 30vw;
+    color: grey;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
+    color: grey;
 }
 
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
+    color: grey;
 }
 
 #menupunkt:hover {
@@ -58,12 +68,6 @@ nav img {
     left: 1vw;
 }
 
-h1 {
-    text-align: center;
-    padding-top: 30vw;
-    color: grey;
-    margin: 0;
-}
 
 footer {
     background-color: white;
@@ -74,15 +78,28 @@ footer {
 
 
 /******************** FORSIDE ********************/
-.forside_video {
-    width: 100vw;
-    position: relative;
-    margin: 0;
+.forside_video_desktop {
+    display: none;
 }
 
 
 
 /******************** ABOUT ********************/
+.about_cv,
+.about_tekst_top {
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.lang_video {
+    margin-top: 5vh;
+}
+
+.about_cv {
+    margin-top: 10vh;
+}
 
 
 /******************** WORK ********************/
@@ -147,7 +164,7 @@ footer {
 }
 
 /*** MATER ***/
-.mater{
+.mater {
     margin-top: 40vh;
 }
 
@@ -231,13 +248,15 @@ main {
 
 
 
-
-
-
-
 /******************** CONTACT ********************/
-
-
+.contact_tekst {
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    align-content: center;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+}
 
 
 
@@ -258,12 +277,60 @@ main {
     }
 
     footer {
-        margin-top: 550px;
+        margin-top: 50vh;
     }
 
     /******************** FORSIDE ********************/
+    .forside_video_desktop {
+        display: block;
+    }
+
+    .forside_video_mobil {
+        display: none;
+    }
 
     /******************** ABOUT ********************/
+    .about_tekst_top {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about_tekst, .about_video {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_tekst {
+        margin-right: 2vw;
+        margin-top: 31vh;
+    }
+
+    .about_video {
+        margin-left: 2vw;
+    }
+
+    .about_cv {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about_cv_1,
+    .about_cv_2 {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_cv_1 {
+        margin-right: 2vw;
+    }
+
+    .about_cv_2 {
+        margin-left: 2vw;
+    }
+
+    .about_cv {
+        margin-top: 15vh;
+    }
 
     /******************** WORK ********************/
 
@@ -364,7 +431,11 @@ main {
     }
 
     .about_soft {
-        margin: 12vw 2vw 0 0;
+        margin: 17vw 2vw 0;
+    }
+
+    .about_soft p {
+        font-size: 0.85rem;
     }
 
     main {
@@ -394,7 +465,28 @@ main {
 
 
 
-
-
     /******************** CONTACT ********************/
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: -7vh;
+    }
+
+    .contact_tekst,
+    .contact_gif {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .contact_tekst {
+        margin-top: 45vh;
+    }
+
+    .contact_gif {
+        margin-left: 15vw;
+    }
+
+
 }

@@ -21,9 +21,14 @@
 
     <h1 class="about_overskrift"></h1>
 
-    <div class="about_tekst"></div>
-    <div class="about_foto"></div>
-    <div class="about_cv"></div>
+    <div class="about_tekst_top">
+        <div class="about_tekst"></div>
+        <div class="about_video"></div>
+    </div>
+    <div class="about_cv">
+        <div class="about_cv_1"></div>
+        <div class="about_cv_2"></div>
+    </div>
 
     <footer></footer>
 
@@ -31,8 +36,12 @@
         window.addEventListener("load", sidenVises);
 
         const page_about = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/pages/12";
+
         const tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/183";
-        const cv = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/185";
+        const video = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/311";
+
+        const cv_1 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/185";
+        const cv_2 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/308";
 
         const footer = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/193";
 
@@ -65,24 +74,52 @@
             visTekst(json);
         }
 
-        function visTekst(page) {
-            console.log(page);
-            document.querySelector(".about_tekst").innerHTML = page.content.rendered;
-            hentCV();
+        function visTekst(posts) {
+            console.log(posts);
+            document.querySelector(".about_tekst").innerHTML = posts.content.rendered;
+            hentVideo();
+        }
+
+
+        /*********** VIDEO OM OLIVER ***********/
+        async function hentVideo() {
+            const response = await fetch(video);
+            console.log(response);
+            const json = await response.json();
+            visVideo(json);
+        }
+
+        function visVideo(posts) {
+            console.log(posts);
+            document.querySelector(".about_video").innerHTML = posts.content.rendered;
+            hentCV_1();
         }
 
 
         /*********** CV ***********/
-        async function hentCV() {
-            const response = await fetch(cv);
+        async function hentCV_1() {
+            const response = await fetch(cv_1);
             console.log(response);
             const json = await response.json();
-            visCV(json);
+            visCV_1(json);
         }
 
-        function visCV(page) {
-            console.log(page);
-            document.querySelector(".about_cv").innerHTML = page.content.rendered;
+        function visCV_1(posts) {
+            console.log(posts);
+            document.querySelector(".about_cv_1").innerHTML = posts.content.rendered;
+            hentCV_2();
+        }
+
+        async function hentCV_2() {
+            const response = await fetch(cv_2);
+            console.log(response);
+            const json = await response.json();
+            visCV_2(json);
+        }
+
+        function visCV_2(posts) {
+            console.log(posts);
+            document.querySelector(".about_cv_2").innerHTML = posts.content.rendered;
             hentFooter();
         }
 
@@ -102,8 +139,6 @@
             console.log(posts);
             document.querySelector("footer").innerHTML = posts.content.rendered;
         }
-
-
 
     </script>
 </body>
