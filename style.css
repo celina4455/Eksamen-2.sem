@@ -482,10 +482,11 @@ main {
 
     .contact_tekst {
         margin-top: 37vh;
+        margin-left: 5vw;
     }
 
     .contact_gif {
-        margin-left: 15vw;
+        margin-left: 5vw;
     }
 
 
