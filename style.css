@@ -19,6 +19,21 @@ nav a {
 
 }
 
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
 #menupunkt:hover {
     transform: scale(1.2);
 }
@@ -27,8 +42,7 @@ nav {
     height: 10vw;
     text-align: end;
     position: absolute;
-    width: 99vw;
-    left: 1vw;
+    width: 98vw;
     z-index: 101;
     margin-top: 15px;
 }
@@ -103,9 +117,9 @@ footer {
 }
 
 
-/*** SOFT BOXING **/
-.softboxing {
-    margin-top: 20vh;
+/*** SOULLAND **/
+.soulland {
+    margin-top: 40vh;
 }
 
 
@@ -141,8 +155,9 @@ footer {
 
 /******************** SINGLE VIEW WORK ********************/
 .about_soft {
-    margin: 0 8vw;
+    margin: 10vw 8vw;
 }
+
 
 
 /** Carousel **/
@@ -234,7 +249,7 @@ main {
 @media only screen and (min-width: 600px) {
     h1 {
         padding-top: 12vw;
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     nav img {
@@ -285,15 +300,15 @@ main {
         width: auto;
     }
 
+    /** SOFT BOXING **/
+    .softboxing {
+        margin-top: 10vh;
+        height: 47vh;
+    }
+
     /** SOULLAND **/
     .soulland {
         height: 72vh;
-    }
-
-    /** SOFTBOXING **/
-    .softboxing {
-        margin-top: 40vh;
-        height: 47vh;
     }
 
     /** OFFLICENSE **/
@@ -348,7 +363,7 @@ main {
     }
 
     .about_soft {
-        margin: 22vw 2vw 0 0;
+        margin: 12vw 2vw 0 0;
     }
 
     main {
