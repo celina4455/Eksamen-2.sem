@@ -19,6 +19,21 @@ nav a {
 
 }
 
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
 #menupunkt:hover {
     transform: scale(1.2);
 }
@@ -27,8 +42,7 @@ nav {
     height: 10vw;
     text-align: end;
     position: absolute;
-    width: 99vw;
-    left: 1vw;
+    width: 98vw;
     z-index: 101;
     margin-top: 15px;
 }
@@ -73,12 +87,23 @@ footer {
 
 /******************** WORK ********************/
 
+.work p {
+    width: 100%;
+}
+
 .all_work_foto {
-    max-width: 80vw;
+    width: 100%;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+
+.all_work_foto img {
+    width: 100%;
     height: auto;
-    margin: 0 auto;
-    align-content: center;
-    position: relative;
+}
+
+.work {
+    width: 80vw;
 }
 
 
@@ -93,51 +118,47 @@ footer {
 }
 
 
-/******* SOULLAND *******/
-.soulland_foto {
-    margin-top: 10vw;
+/*** SOULLAND **/
+.soulland {
+    margin-top: 40vh;
 }
 
-/******* OFF LICENSE - CASH ONLY *******/
-.off_foto {
-    margin-top: 80vw;
+
+/*** OFFLICENSE **/
+.offlicense {
+    margin-top: 40vh;
 }
 
-/****** EROS TORSO *****/
-.eros_foto {
-    margin-top: 80vw;
+
+/*** EROS TORSO **/
+.erostorso {
+    margin-top: 40vh;
 }
 
-/****** SOFT BOXING *****/
-.soft_foto {
-    margin-top: 80vw;
+
+/*** BLANKET FORT **/
+.blanketfort {
+    margin-top: 40vh;
 }
 
-/****** FORT *****/
-.fort_foto {
-    margin-top: 80vw;
+/*** KIKI BEACH CLUB ***/
+.kikibeachclub {
+    margin-top: 40vh;
 }
 
-.fort_2 {
-    margin-left: 6vw;
+/*** MATER ***/
+.mater{
+    margin-top: 40vh;
 }
 
-/****** KIKI *****/
-.kiki_foto {
-    margin-top: 80vw;
-}
-
-/****** MATER *****/
-.mater_foto {
-    margin-top: 80vw;
-}
 
 
 
 /******************** SINGLE VIEW WORK ********************/
 .about_soft {
-    margin: 0 8vw;
+    margin: 10vw 8vw;
 }
+
 
 
 /** Carousel **/
@@ -229,7 +250,7 @@ main {
 @media only screen and (min-width: 600px) {
     h1 {
         padding-top: 12vw;
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     nav img {
@@ -245,14 +266,11 @@ main {
     /******************** ABOUT ********************/
 
     /******************** WORK ********************/
-    .all_work_foto {
-        max-width: 100%;
-    }
 
     .all_work_tekst {
         width: 30vw;
         left: 5vw;
-        padding: 3vw;
+        padding: 1.5vw;
         margin-top: -2vw;
         box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.2);
     }
@@ -265,117 +283,65 @@ main {
         transition: all .2s ease-in-out;
     }
 
-    /***** SOULLAND *****/
-    .soulland_foto {
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 3vw;
-        padding-left: 8vw;
-        margin-top: 0;
+
+    .work p {
+        height: 100%;
+        width: auto;
     }
 
-    .fotosoulland_3,
-    .fotosoulland_2,
-    .fotosoulland_1 {
-        width: 426px;
-        height: 680px;
-        margin: 0 2px;
+    .all_work_foto {
+        height: 100%;
+        width: auto;
+        margin-left: 10vw;
+        margin-top: 5vw;
     }
 
-
-    /***** OFF LICENSE - CASH ONLY *****/
-    .off_foto {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 25vw;
-        padding-top: 1vw;
-        padding-left: 8vw;
+    .all_work_foto img {
+        height: 100%;
+        width: auto;
     }
 
-    .fotooff_1,
-    .fotooff_2,
-    .fotooff_3 {
-        margin: 0 2px;
+    /** SOFT BOXING **/
+    .softboxing {
+        margin-top: 10vh;
+        height: 47vh;
+    }
+
+    /** SOULLAND **/
+    .soulland {
+        height: 72vh;
+    }
+
+    /** OFFLICENSE **/
+    .offlicense {
+        margin-top: 50vh;
+        height: 48vh;
     }
 
 
     /***** EROS TORSO *****/
-    .eros_foto {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 25vw;
-        padding-top: 1vw;
-        padding-left: 8vw;
-    }
-
-    .fotoeros_1,
-    .fotoeros_2,
-    .fotoeros_3 {
-        margin: 0 2px;
-    }
-
-
-    /***** SOFT BOXING *****/
-    .soft_foto {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 25vw;
-        padding-top: 1vw;
-        padding-left: 8vw;
-    }
-
-    .soft1,
-    .soft2,
-    .soft3 {
-        margin: 0 2px;
+    .erostorso {
+        margin-top: 50vh;
+        height: 58vh;
     }
 
 
     /***** FORT *****/
-    .fort_foto {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 25vw;
-        padding-top: 1vw;
-        padding-left: 8vw;
+    .blanketfort {
+        margin-top: 50vh;
+        height: 39vh;
     }
-
-    .fort_1,
-    .fort_2,
-    .fort_3 {
-        margin: 0 2px;
-    }
-
 
     /***** KIKI BEACH CLUB *****/
-    .kiki_foto {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 25vw;
-        padding-top: 1vw;
-        padding-left: 8vw;
+    .kikibeachclub {
+        margin-top: 50vh;
+        height: 72vh;
     }
-
-    .kiki_1,
-    .kiki_2,
-    .kiki_3 {
-        margin: 0 2px;
-    }
-
 
     /***** MATER *****/
-    .mater_foto {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 25vw;
-        padding-top: 1vw;
-        padding-left: 8vw;
-    }
-
-    .mater1,
-    .mater2,
-    .mater3 {
-        margin: 0 2px;
+    .mater {
+        margin-top: 50vh;
+        height: 48vh;
     }
 
 
@@ -398,7 +364,7 @@ main {
     }
 
     .about_soft {
-        margin: 22vw 2vw 0 0;
+        margin: 12vw 2vw 0 0;
     }
 
     main {

@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,43 +16,45 @@
         <a href="work.html"><img id="menupunkt" src="SVG/work.svg"></a>
         <a href="about.html"><img id="menupunkt" src="SVG/about.svg"></a>
         <a href="contact.html"><img id="menupunkt" src="SVG/contact.svg"></a>
-
     </nav>
 
     <h1 class="work_overskrift"></h1>
 
-    <div class="work">
-        <div class="soulland_foto all_work_foto"></div>
-        <div class="soulland_tekst_1 all_work_tekst"></div>
+    <a href="singlesoft.html">
+        <div class="work softboxing">
+            <div class="soft_foto all_work_foto"></div>
+            <div class="soft_tekst_1 all_work_tekst"></div>
+        </div>
+    </a>
+
+    <div class="work soulland">
+        <div class="soulland_foto all_work_foto">
+        </div>
+        <div class="soulland_tekst_1 all_work_tekst">
+        </div>
     </div>
 
-    <a href="singlesoft.html">
-       <div class="work">
-        <div class="soft_foto all_work_foto"></div>
-        <div class="soft_tekst_1 all_work_tekst"></div>
-    </div></a>
-
-    <div class="work">
+    <div class="work offlicense">
         <div class="off_foto all_work_foto"></div>
         <div class="off_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work">
+    <div class="work erostorso">
         <div class="eros_foto all_work_foto"></div>
         <div class="eros_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work">
+    <div class="work blanketfort">
         <div class="fort_foto all_work_foto"></div>
         <div class="fort_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work">
+    <div class="work kikibeachclub">
         <div class="kiki_foto all_work_foto"></div>
         <div class="kiki_tekst_1 all_work_tekst"></div>
     </div>
 
-    <div class="work">
+    <div class="work mater">
         <div class="mater_foto all_work_foto"></div>
         <div class="mater_tekst_1 all_work_tekst"></div>
     </div>
@@ -136,9 +140,39 @@
         function visSoullandTekst(posts) {
             console.log(posts);
             document.querySelector(".soulland_tekst_1").innerHTML = posts.content.rendered;
-            hentOfffoto();
+            hentSoftFoto();
         }
 
+
+
+
+
+        //*********************** SOFT BOXING ***********************//
+        async function hentSoftFoto() {
+            const response = await fetch(soft_foto);
+            console.log(response);
+            const json = await response.json();
+            visSoftFoto(json);
+        }
+
+        function visSoftFoto(posts) {
+            console.log(posts);
+            document.querySelector(".soft_foto").innerHTML = posts.content.rendered;
+            hentSoftTekst();
+        }
+
+        async function hentSoftTekst() {
+            const response = await fetch(soft_tekst);
+            console.log(response);
+            const json = await response.json();
+            visSoftBoxingTekst(json);
+        }
+
+        function visSoftBoxingTekst(posts) {
+            console.log(posts);
+            document.querySelector(".soft_tekst_1").innerHTML = posts.content.rendered;
+            hentOfffoto();
+        }
 
 
 
@@ -198,39 +232,10 @@
         function visErosTorsoTekst(posts) {
             console.log(posts);
             document.querySelector(".eros_tekst_1").innerHTML = posts.content.rendered;
-            hentSoftFoto();
-        }
-
-
-
-
-
-        //*********************** SOFT BOXING ***********************//
-        async function hentSoftFoto() {
-            const response = await fetch(soft_foto);
-            console.log(response);
-            const json = await response.json();
-            visSoftFoto(json);
-        }
-
-        function visSoftFoto(posts) {
-            console.log(posts);
-            document.querySelector(".soft_foto").innerHTML = posts.content.rendered;
-            hentSoftTekst();
-        }
-
-        async function hentSoftTekst() {
-            const response = await fetch(soft_tekst);
-            console.log(response);
-            const json = await response.json();
-            visSoftBoxingTekst(json);
-        }
-
-        function visSoftBoxingTekst(posts) {
-            console.log(posts);
-            document.querySelector(".soft_tekst_1").innerHTML = posts.content.rendered;
             hentFortFoto();
         }
+
+
 
 
 
@@ -341,8 +346,5 @@
             console.log(posts);
             document.querySelector("footer").innerHTML = posts.content.rendered;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
