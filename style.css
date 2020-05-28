@@ -295,7 +295,8 @@ main {
         flex-wrap: wrap;
     }
 
-    .about_tekst, .about_video {
+    .about_tekst,
+    .about_video {
         flex-grow: 1;
         flex-basis: 200px;
     }
