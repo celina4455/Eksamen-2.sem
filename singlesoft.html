@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description ="Soft boxing is a work made by the dansih artist Oliver Sundqvist made in 2019">
     <title>Soft boxing</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -58,6 +59,8 @@
         const footer = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/193";
 
         let theJSON;
+
+        /*Variablen herunder bruges til at vide, hvor mange billeder, der er i karousellen og dermed til at vide, hvornår man ikke længere skal kunne trykke på knapperne*/
         let numberOfPicsInCarousel;
         let caroCurrentNum = 0;
 
@@ -109,16 +112,19 @@
         }
 
         function buildCarousel() {
-            //console.log(theJSON.husbilleder);
+            //Antallet af billeder i karousellen svarer til længden på den json-fil vi har hentet ind, som er en pod med et array af billeder - vores array af billeder hedder "work" = derfor work.length
             numberOfPicsInCarousel = theJSON.work.length;
+            //Så laver vi et forEach arrow - og her kigger vi på hvert enkelt "billede" og "index", som er nummeret i rækken. Derefter skal de klones til både det store billede, der bliver vist og de små billeder under det store billede.
             theJSON.work.forEach((billede, index) => {
                 const theClone = document.querySelector("template").cloneNode(true).content;
                 const secondClone = document.querySelector("template").cloneNode(true).content;
 
+                //Her henter vi billederne ind - og det er jo de samme billeder i begge kloner.
                 theClone.querySelector("img").src = billede.guid;
                 secondClone.querySelector("img").src = billede.guid;
                 secondClone.querySelector("section").dataset.myIndex = index;
 
+                //Det store billede (theClone) skal appendes til containeren, mens de små billeder (secondClone)
                 document.querySelector(".the_container").appendChild(theClone);
                 document.querySelector(".legend_pic_container").appendChild(secondClone);
             })
