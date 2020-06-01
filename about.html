@@ -26,6 +26,12 @@
         <div class="about_tekst"></div>
         <div class="about_video"></div>
     </div>
+
+    <div class="about_future">
+        <div class="about_gif_ex"></div>
+        <div class="about_tekst_ex"></div>
+    </div>
+
     <div class="about_cv">
         <div class="about_cv_1"></div>
         <div class="about_cv_2"></div>
@@ -43,6 +49,9 @@
 
         const cv_1 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/185";
         const cv_2 = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/308";
+
+        const future_tekst = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/341";
+        const future_gif = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/340";
 
         const footer = "http://celinamadsen.dk/kea/eksamen/wordpress/wp-json/wp/v2/posts/193";
 
@@ -93,6 +102,34 @@
         function visVideo(posts) {
             console.log(posts);
             document.querySelector(".about_video").innerHTML = posts.content.rendered;
+            hentFutureTekst();
+        }
+
+
+        /*********** FUTURE EXHIBITIONS ***********/
+        async function hentFutureTekst() {
+            const response = await fetch(future_tekst);
+            console.log(response);
+            const json = await response.json();
+            visFutureTekst(json);
+        }
+
+        function visFutureTekst(posts) {
+            console.log(posts);
+            document.querySelector(".about_tekst_ex").innerHTML = posts.content.rendered;
+            hentFutureGif();
+        }
+
+        async function hentFutureGif() {
+            const response = await fetch(future_gif);
+            console.log(response);
+            const json = await response.json();
+            visFutureGif(json);
+        }
+
+        function visFutureGif(posts) {
+            console.log(posts);
+            document.querySelector(".about_gif_ex").innerHTML = posts.content.rendered;
             hentCV_1();
         }
 

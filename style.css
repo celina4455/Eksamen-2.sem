@@ -86,7 +86,9 @@ footer {
 
 /******************** ABOUT ********************/
 .about_cv,
-.about_tekst_top {
+.about_tekst_top,
+.about_future,
+.wp-image-345 {
     width: 80vw;
     height: auto;
     margin: 0 auto;
@@ -94,6 +96,14 @@ footer {
 }
 
 .lang_video {
+    margin-top: 5vh;
+}
+
+.about_future {
+    margin-top: 10vh;
+}
+
+.wp-image-345 {
     margin-top: 5vh;
 }
 
@@ -189,6 +199,8 @@ main {
     height: 100%;
 }
 
+
+/*Her sætter vi overflow-x til at scroller, hvilket gør, at man kan scrolle mellem billederne og at der derfor kun bliver vist ét stort billede og ikke alle de store billeder ved siden ad hinanden. Scroll-snap-type = x mandatory betyder, at den skal snappe på x-aksen og at den skal snappe helt hen til hvor næste billede starter (mandatory) - For at dette virker, skal man i containeren fortælle, hvor den skal snappe hen, altså til start. - Flex betyder, at de ligger ved siden ad hinanden og ikke under.*/
 .the_container {
     display: flex;
     overflow-x: scroll;
@@ -200,6 +212,7 @@ main {
     min-width: 100%;
 }
 
+/*Her får vi vores to pile til at ligge på hver side af det store billede med flex */
 .carousel_inner {
     display: flex;
 }
@@ -220,6 +233,7 @@ main {
     outline-offset: -1px;
 }
 
+/*Her styrer vi, hvor pilene skal stå. Z-index og position abseloute gør, at de ligger sig ovenpå billedet og ikke ved siden af. */
 .bwd,
 .fwd {
     display: flex;
@@ -308,6 +322,30 @@ main {
 
     .about_video {
         margin-left: 2vw;
+    }
+
+    .about_future {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about_tekst_ex,
+    .about_gif_ex {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_tekst_ex {
+        margin-left: -2vw;
+        margin-top: 35vh;
+    }
+
+    .about_gif_ex {
+        margin-left: 5vw;
+    }
+
+    .wp-image-345 {
+        width: 25vw;
     }
 
     .about_cv {

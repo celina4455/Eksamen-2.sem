@@ -62,6 +62,8 @@
 
         /*Variablen herunder bruges til at vide, hvor mange billeder, der er i karousellen og dermed til at vide, hvornår man ikke længere skal kunne trykke på knapperne*/
         let numberOfPicsInCarousel;
+
+        /*Variablen herunder fortæller, hvilket billede vi står på. Den skal som udgangspunkt stå på billede nummer 0.*/
         let caroCurrentNum = 0;
 
         function sidenVises() {
@@ -175,6 +177,7 @@
             }
         }
 
+        // Denne funktion fortæller, hvor der skal scrolles hen og at den skal scrolle den længde, som er billedebredden til venstre.
         function navigate() {
             document.querySelector(".the_container").scrollTo({
                 left: caroCurrentNum * document.querySelector(".caro_imgs").width,
