@@ -69,6 +69,21 @@ nav img {
 }
 
 
+.topknap {
+    position: fixed;
+    z-index: 10000;
+    bottom: 18vh;
+    right: 1vw;
+    font-family: 'Montserrat', sans-serif;
+    ;
+    font-size: 2.6rem;
+    color: grey;
+    text-decoration: none;
+    padding: 8px;
+    background-color: white;
+}
+
+
 footer {
     background-color: white;
     margin-top: 350px;
@@ -283,13 +298,19 @@ main {
 
 /******************************************** IPAD ********************************************/
 @media only screen and (min-width: 800px) and (max-width: 1030px) {
-        h1 {
+    h1 {
         padding-top: 12vw;
         font-size: 4rem;
     }
 
     nav img {
         width: 75px;
+    }
+
+    .topknap {
+        bottom: 30vh;
+        right: 2vw;
+        font-size: 2rem;
     }
 
     footer {
@@ -339,7 +360,7 @@ main {
 
     .about_tekst_ex {
         margin-left: -2vw;
-        margin-top: 15vh;
+        margin-top: 12vh;
     }
 
     .about_gif_ex {
@@ -600,7 +621,7 @@ main {
 
     .about_tekst_ex {
         margin-left: -2vw;
-        margin-top: 35vh;
+        margin-top: 27vh;
     }
 
     .about_gif_ex {
