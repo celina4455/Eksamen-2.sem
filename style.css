@@ -280,7 +280,270 @@ main {
 
 
 
-@media only screen and (min-width: 600px) {
+
+/******************************************** IPAD ********************************************/
+@media only screen and (min-width: 800px) and (max-width: 1030px) {
+        h1 {
+        padding-top: 12vw;
+        font-size: 4rem;
+    }
+
+    nav img {
+        width: 75px;
+    }
+
+    footer {
+        margin-top: 50vh;
+    }
+
+    /******************** FORSIDE ********************/
+    .forside_video_desktop {
+        display: block;
+    }
+
+    .forside_video_mobil {
+        display: none;
+    }
+
+    /******************** ABOUT ********************/
+    .about_tekst_top {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about_tekst,
+    .about_video {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_tekst {
+        margin-right: 2vw;
+        margin-top: 15vh;
+    }
+
+    .about_video {
+        margin-left: 2vw;
+    }
+
+    .about_future {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about_tekst_ex,
+    .about_gif_ex {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_tekst_ex {
+        margin-left: -2vw;
+        margin-top: 15vh;
+    }
+
+    .about_gif_ex {
+        margin-left: 5vw;
+    }
+
+    .wp-image-345 {
+        width: 25vw;
+    }
+
+    .about_cv {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about_cv_1,
+    .about_cv_2 {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_cv_1 {
+        margin-right: 2vw;
+    }
+
+    .about_cv_2 {
+        margin-left: 2vw;
+    }
+
+    .about_cv {
+        margin-top: 15vh;
+    }
+
+    /******************** WORK ********************/
+
+    .all_work_tekst {
+        width: 30vw;
+        left: 10vw;
+        padding: 1.5vw;
+        margin-top: -2vw;
+        box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .work:hover {
+        transform: scale(1.05);
+    }
+
+    .work {
+        transition: all .2s ease-in-out;
+    }
+
+
+    .work p {
+        height: 100%;
+        width: auto;
+    }
+
+    .all_work_foto {
+        height: 100%;
+        width: auto;
+        margin-left: 17vw;
+        margin-top: 5vw;
+    }
+
+    .all_work_foto img {
+        height: 100%;
+        width: auto;
+    }
+
+    /** SOFT BOXING **/
+    .softboxing {
+        margin-top: 10vh;
+        height: 27vh;
+    }
+
+    /** SOULLAND **/
+    .soulland {
+        height: 40vh;
+    }
+
+    /** OFFLICENSE **/
+    .offlicense {
+        margin-top: 50vh;
+        height: 27vh;
+    }
+
+
+    /***** EROS TORSO *****/
+    .erostorso {
+        margin-top: 50vh;
+        height: 33vh;
+    }
+
+
+    /***** FORT *****/
+    .blanketfort {
+        margin-top: 50vh;
+        height: 22vh;
+    }
+
+    /***** KIKI BEACH CLUB *****/
+    .kikibeachclub {
+        margin-top: 50vh;
+        height: 40vh;
+    }
+
+    /***** MATER *****/
+    .mater {
+        margin-top: 50vh;
+        height: 27vh;
+    }
+
+
+
+
+    /******************** SINGLE VIEW WORK ********************/
+    #singleview_soft {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        padding-top: 5vw;
+        margin: 0 auto;
+        align-content: center;
+    }
+
+    .about_soft,
+    main {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .about_soft {
+        margin: 17vw 2vw 0;
+    }
+
+    .about_soft p {
+        font-size: 0.85rem;
+    }
+
+    main {
+        margin-top: 0vw;
+    }
+
+    .bwd,
+    .fwd {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        position: absolute;
+        height: 2vw;
+        width: auto;
+        padding: 20% 0;
+    }
+
+    .fwd {
+        right: 9.5vw;
+    }
+
+    .carousel {
+        width: 90%;
+    }
+
+
+
+
+    /******************** CONTACT ********************/
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    .contact_tekst,
+    .contact_gif {
+        flex-grow: 1;
+        flex-basis: 200px;
+    }
+
+    .contact_tekst {
+        margin-top: 20vh;
+        margin-left: 5vw;
+    }
+
+    .contact_gif {
+        margin-left: 5vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************** DESKTOP ********************************************/
+@media only screen and (min-width: 1030px) {
     h1 {
         padding-top: 12vw;
         font-size: 4rem;
