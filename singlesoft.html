@@ -116,7 +116,7 @@
         function buildCarousel() {
             //Antallet af billeder i karousellen svarer til længden på den json-fil vi har hentet ind, som er en pod med et array af billeder - vores array af billeder hedder "work" = derfor work.length
             numberOfPicsInCarousel = theJSON.work.length;
-            //Så laver vi et forEach arrow - og her kigger vi på hvert enkelt "billede" og "index", som er nummeret i rækken. Derefter skal de klones til både det store billede, der bliver vist og de små billeder under det store billede.
+            //Så laver vi et forEach arrow - og her kigger vi på hvert enkelt "billede" og "index", som er nummeret i rækken. Derefter skal de klones til både det store billede, der bliver vist og de små billeder under det store billede. CloneNode betyder, at der laves en kopi og at denne returneres med attributterne og dens værdier (true).
             theJSON.work.forEach((billede, index) => {
                 const theClone = document.querySelector("template").cloneNode(true).content;
                 const secondClone = document.querySelector("template").cloneNode(true).content;
