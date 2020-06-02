@@ -44,7 +44,7 @@ p {
     color: grey;
 }
 
-#menupunkt:hover {
+.menupunkt:hover {
     transform: scale(1.2);
 }
 
@@ -283,7 +283,7 @@ main {
 
 /******************************************** IPAD ********************************************/
 @media only screen and (min-width: 800px) and (max-width: 1030px) {
-        h1 {
+    h1 {
         padding-top: 12vw;
         font-size: 4rem;
     }
